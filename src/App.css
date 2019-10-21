@@ -1,22 +1,116 @@
-.App {
+/* Scheme */
+
+:root {
+  --primary: #f3f1ed;
+  --secondary: #545454;
+  --tertiary: #b9aea6;
+  --main-text: #222;
+  --background: #fff;
+}
+
+/* Smaller Screens */
+
+@media only screen and (max-width: 1100px) {
+  .background::after {
+    background-image: none;
+    background-color: #efefed;
+  }
+}
+
+/* Main Structure */
+
+/* TODO Make Responsive */
+
+html {
+  font-family: Calibri, "Trebuchet MS", sans-serif;
+  color: var(--main-text);
+  scroll-behavior: smooth;
+}
+
+.background::after {
+  content: "";
+  background: linear-gradient(
+      rgba(243, 225, 194, 0.1),
+      rgba(243, 225, 194, 0.1)
+    ),
+    url("images/mountains2.jpg");
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: cover no-repeat;
+  z-index: -1;
+  background-attachment: fixed;
+  margin-top: -10px;
+  background-color: #999;
+}
+
+.center-column {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+
+header,
+footer,
+section {
+  box-sizing: border-box;
+  margin: 10px 0px;
+  padding: 22px 50px;
+  width: 100%;
+  background-color: var(--background);
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px 0px rgba(64, 63, 63, 0.06);
+}
+
+/* Styles */
+
+h3 {
+  padding-top: 0px;
+  margin: 0 auto 12px;
+  letter-spacing: 1px;
   text-align: center;
+  font-weight: normal;
+  font-size: 1.55em;
+  color: #545454;
 }
 
-.App-logo {
-  height: 40vmin;
+.title-underline {
+  height: 1px;
+  width: 60px;
+  margin: 5px auto 20px;
+  background-color: #ccc;
+  border-top: solid 1px var(--secondary);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.font-inverse {
+  color: var(--background);
+}
+
+/* Component - Icon Links */
+
+.fa-stack {
+  margin: 0px 7px;
+}
+
+.fa--color-black {
+  color: var(--secondary);
+}
+
+a.fa {
+  border-radius: 50%;
+  background-color: var(--secondary);
   color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #09d3ac;
+a.fa:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+i {
+  padding-right: 5px;
 }
